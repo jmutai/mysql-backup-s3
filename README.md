@@ -1,6 +1,6 @@
 # mysql-backup-s3
 
-This is a repository for a aash script to backup MySQL databases to s3.
+This is a repository for a bash script to backup MySQL databases to s3.
 
 The script is easy to use. Just modify the following variables defibed at the top.
 
