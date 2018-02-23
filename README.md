@@ -1,4 +1,4 @@
-# mysql-backup-s3
+# Backup MySQL databases to Amazon S3
 
 This is a repository for a bash script to backup MySQL databases to s3.
 
