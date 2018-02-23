@@ -27,6 +27,19 @@ dest_backup_file="/tmp/databases-$date_format.tgz"
 log_file="/var/log/s3"
 s3_bucket="s3://s3-bucket-name"
 ```
+
+For email support, you need `mail` command working. On CentOS install mailx package:
+
+```
+$ sudo yum -y install mailx
+```
+
+On Ubuntu install mailutils package.
+
+```
+$ sudo apt-get -y install mailutils
+```
+
 Once all is modified, run the script.
 
 ```
