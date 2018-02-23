@@ -2,6 +2,17 @@
 
 This is a repository for a bash script to backup MySQL databases to s3.
 
+## Prerequisites
+
+- Python
+- Pip
+- awscli tools
+- mail command for email notification
+
+For a detailed guide on how to Install and Configure all prerequisites, visit:
+
+https://computingforgeeks.com/backup-mysql-databases-amazon-s3/
+
 The script is easy to use. Just modify the following variables defibed at the top.
 
 
