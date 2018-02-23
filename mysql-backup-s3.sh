@@ -3,7 +3,7 @@
 # Define bavkup variables
 DB_USER=""
 DB_PASSWORD=""
-HOST="localhost"
+DB_HOST="localhost"
 date_format=`date +%a`
 db_dir="/tmp/databases/$date_format"
 sync_dir="/tmp/databases"
