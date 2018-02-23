@@ -39,12 +39,12 @@ done
 # Generate compressed file of backup dir
 
 echo "Compressing databases before upload.."
-tar -zcvf $dest_backup_file -C $db_dir . &>> $log_file
+tar -zcvf $dest_backup_file -C $db_dir . | tee -a $log_file
 
 # Copy compressed file to s3
 
 echo "Backing up databases to s3.."
-aws s3 cp $dest_backup_file  ${s3_bucket} &>> $log_file
+aws s3 cp $dest_backup_file  ${s3_bucket} | tee -a $log_file
 
 
 # Send email when successful - Optional
