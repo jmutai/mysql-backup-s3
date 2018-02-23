@@ -23,7 +23,7 @@ DB_HOST="localhost"
 date_format=`date +%a`
 db_dir="/tmp/databases/$date_format"
 sync_dir="/tmp/databases"
-dest_backup_file="/tmp/cloudstack-databases-$date_format.tgz"
+dest_backup_file="/tmp/databases-$date_format.tgz"
 log_file="/var/log/s3"
 s3_bucket="s3://s3-bucket-name"
 ```
