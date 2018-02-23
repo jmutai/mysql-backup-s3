@@ -17,7 +17,7 @@ The script is easy to use. Just modify the following variables defined at the to
 
 
 ```
-DB_USER="root"
+DB_USER=""
 DB_PASSWORD=""
 DB_HOST="localhost"
 date_format=`date +%a`
@@ -26,6 +26,7 @@ sync_dir="/tmp/databases"
 dest_backup_file="/tmp/databases-$date_format.tgz"
 log_file="/var/log/s3"
 s3_bucket="s3://s3-bucket-name"
+email_notification="email-address"
 ```
 
 For email support, you need `mail` command working. On CentOS install mailx package:
