@@ -13,7 +13,7 @@ For a detailed guide on how to Install and Configure all prerequisites, visit:
 
 https://computingforgeeks.com/backup-mysql-databases-amazon-s3/
 
-The script is easy to use. Just modify the following variables defibed at the top.
+The script is easy to use. Just modify the following variables defined at the top.
 
 
 ```
