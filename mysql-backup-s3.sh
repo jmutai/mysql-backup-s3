@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Define bavkup variables
-USER="root"
-PASSWORD="V8imjOJMmcIP"
+DB_USER=""
+DB_PASSWORD=""
 HOST="localhost"
 date_format=`date +%a`
 db_dir="/tmp/databases/$date_format"
 sync_dir="/tmp/databases"
-dest_backup_file="/tmp/cloudstack-databases-$date_format.tgz"
+dest_backup_file="/tmp/databases-$date_format.tgz"
 log_file="/var/log/s3"
-s3_bucket="s3://"
+s3_bucket="s3://s3-bucket-name"
 email_notification="email-address"
 
 # create log file
@@ -24,15 +24,14 @@ fi
 
 # Get a list of all databases -- Except mysql and schema dbs
 
-databases=`mysql -u $USER  -p$PASSWORD -e "SHOW DATABASES;" | tr -d "| " | grep -v Database`
+databases=`mysql -u $DB_USER -h $DB_HOST -p$DB_PASSWORD -e "SHOW DATABASES;" | tr -d "| " | grep -v Database`
 
 # Dump all databases
 
 for db in $databases; do
     if [[ "$db" != "information_schema"  ]] && [[ "$db" != "performance_schema"  ]] && [[ "$db" != "mysql"  ]] && [[ "$db" != _*  ]] ; then
         echo "Dumping database: $db"
-        mysqldump -u $USER -h $HOST -p$PASSWORD --databases $db > $db_dir/$db-$date_format.sql
-        # gzip $OUTPUT/`date +%Y%m%d`.$db.sql
+        mysqldump -u $DB_USER -h $DB_HOST -p$DB_PASSWORD --databases $db > $db_dir/$db-$date_format.sql
     fi
 done
 
